@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AndroidUserAuthentication</string>
+    <string name="facebook_app_id">1819047058391880</string>
+    <string name="fb_login_protocol_scheme">fb1819047058391880</string>
+    <string name="title_activity_items_menu">ItemsMenu</string>
+    <string name="profile">Profile</string>
+    <string name="log_out">Log Out</string>
+    <string name="menu_items">Menu Items</string>
+</resources>
