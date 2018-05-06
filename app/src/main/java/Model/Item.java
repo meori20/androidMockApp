@@ -1,4 +1,4 @@
-package com.dev.android.mta.androiduserauthentication.implementaion;
+package Model;
 
 /**
  * Created by shahar on 05/05/2018.

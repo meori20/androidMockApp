@@ -4,14 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.dev.android.mta.androiduserauthentication.Activities.AccountInfoActivity;
 import com.dev.android.mta.androiduserauthentication.Activities.ItemsMenu;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
+import Model.User;
 
 /**
  * Created by Ori on 4/25/2018.

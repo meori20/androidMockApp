@@ -11,8 +11,9 @@ import android.widget.TextView;
 
 import com.dev.android.mta.androiduserauthentication.R;
 
-import java.lang.reflect.Array;
 import java.util.List;
+
+import Model.Item;
 
 /**
  * Created by shahar on 05/05/2018.

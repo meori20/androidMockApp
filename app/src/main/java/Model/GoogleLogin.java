@@ -1,4 +1,4 @@
-package com.dev.android.mta.androiduserauthentication.implementaion;
+package Model;
 
 import android.content.Intent;
 import android.os.Parcelable;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.dev.android.mta.androiduserauthentication.R;
+import com.dev.android.mta.androiduserauthentication.implementaion.AuthenticationMethod;
 import com.dev.android.mta.androiduserauthentication.interfaces.IExternalApiLogin;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -26,7 +27,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-import static com.bumptech.glide.gifdecoder.GifHeaderParser.TAG;
 import static com.dev.android.mta.androiduserauthentication.constans.AuthenticationMethodConstatns.RC_SIGN_IN;
 
 /**
