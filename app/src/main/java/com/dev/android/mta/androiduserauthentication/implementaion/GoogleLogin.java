@@ -1,4 +1,4 @@
-package Model;
+package com.dev.android.mta.androiduserauthentication.implementaion;
 
 import android.content.Intent;
 import android.os.Parcelable;
@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.dev.android.mta.androiduserauthentication.R;
-import com.dev.android.mta.androiduserauthentication.implementaion.AuthenticationMethod;
 import com.dev.android.mta.androiduserauthentication.interfaces.IExternalApiLogin;
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;

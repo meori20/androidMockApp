@@ -104,6 +104,8 @@ public class ItemsMenu extends AppCompatActivity {
 
         mAllItemsRef = FirebaseDatabase.getInstance().getReference("Songs");
 
+
+
         mAllItemsRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot snapshot, String previousChildName) {
@@ -124,7 +126,7 @@ public class ItemsMenu extends AppCompatActivity {
 
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
+                updateSongsList(dataSnapshot);
             }
 
             @Override

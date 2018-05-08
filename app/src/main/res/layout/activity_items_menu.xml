@@ -7,9 +7,10 @@
     tools:context="com.dev.android.mta.androiduserauthentication.Activities.ItemsMenu">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent">
 
         <include
@@ -17,158 +18,111 @@
             layout="@layout/appbar_layout"
             android:layout_width="match_parent"
             android:layout_height="56dp"
+            android:layout_gravity="center"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
 
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="161dp"
-            android:background="@color/com_facebook_button_background_color_focused_disabled"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/com_facebook_button_background_color_focused_disabled">
 
             <android.support.v7.widget.CardView
                 android:id="@+id/cardView"
                 android:layout_width="300dp"
                 android:layout_height="134dp"
+                android:layout_gravity="center"
                 android:layout_marginBottom="16dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="12dp">
 
-                <android.support.constraint.ConstraintLayout
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="140dp">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/searchText"
+
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="42dp"
-                        android:layout_marginBottom="14dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:ems="10"
-                        android:hint="Item Name"
-                        android:inputType="textPersonName"
-                        app:layout_constraintBottom_toTopOf="@+id/maxPriceText"
-                        app:layout_constraintEnd_toStartOf="@+id/searchButton"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.153" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left">
 
-                    <Button
-                        android:id="@+id/searchButton"
-                        android:layout_width="72dp"
-                        android:layout_height="33dp"
-                        android:layout_margin="15dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Search"
-                        android:textSize="12sp"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <Button
+                            android:id="@+id/searchButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Search"
+                            android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/priceText"
-                        android:layout_width="74dp"
-                        android:layout_height="18dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="24dp"
-                        android:clickable="false"
-                        android:text="Max price:"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textSize="14sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/searchText" />
+                        <EditText
+                            android:id="@+id/searchText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:ems="10"
+                            android:hint="Item Name"
+                            android:inputType="textPersonName" />
 
-                    <EditText
-                        android:id="@+id/maxPriceText"
-                        android:layout_width="63dp"
-                        android:layout_height="30dp"
-                        android:layout_marginBottom="32dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/priceText" />
 
-                    <TextView
-                        android:id="@+id/minPrice"
-                        android:layout_width="69dp"
-                        android:layout_height="19dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:clickable="false"
-                        android:text="Min price:"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                        android:textSize="14sp"
-                        app:layout_constraintEnd_toStartOf="@+id/searchButton"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/maxPriceText"
-                        app:layout_constraintTop_toTopOf="@+id/maxPriceText" />
+                    </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/minPriceText"
-                        android:layout_width="55dp"
-                        android:layout_height="24dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="28dp"
-                        android:ems="10"
-                        android:inputType="textPersonName"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toEndOf="@+id/minPrice"
-                        app:layout_constraintTop_toBottomOf="@+id/searchButton" />
-
-                    <RadioButton
-                        android:id="@+id/orderByReviews"
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="21dp"
-                        android:layout_marginBottom="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="12dp"
-                        android:text="Order By Reviews"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/minPriceText"
-                        app:layout_constraintVertical_bias="1.0" />
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:gravity="left">
 
-                    <RadioButton
-                        android:id="@+id/orderByPrice"
-                        android:layout_width="wrap_content"
-                        android:layout_height="21dp"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="78dp"
-                        android:text="Order By Price"
-                        android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.427"
-                        app:layout_constraintStart_toEndOf="@+id/orderByReviews"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.804" />
+                        <EditText
+                            android:id="@+id/maxPriceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/maxPriceLabel"
+                            android:layout_alignParentEnd="true"
+                            android:ems="3"
+                            android:inputType="textPersonName" />
 
-                </android.support.constraint.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/maxPriceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Max price:" />
+
+                        <EditText
+                            android:id="@+id/minPriceText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ems="3"
+                            android:inputType="textPersonName" />
+
+                        <TextView
+                            android:id="@+id/minPriceLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="Min price:" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
             </android.support.v7.widget.CardView>
+
 
         </FrameLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycleView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+            android:layout_gravity="center"
+
+            />
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

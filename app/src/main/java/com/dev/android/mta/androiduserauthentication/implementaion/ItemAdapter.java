@@ -7,11 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.dev.android.mta.androiduserauthentication.R;
 
 import java.util.List;
+import java.util.Random;
 
 import Model.Item;
 
@@ -40,9 +43,15 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     @Override
     public void onBindViewHolder(ItemViewHolder holder, int position) {
         Item item = mItemList.get(position);
+        Random rand = new Random();
 
-        holder.textViewName.setText(item.getName());
-       holder.imageView.setImageURI(Uri.parse(item.getImageUrl()));
+        holder.textViewName.setText(item.getLastName());
+        holder.gender.setText(item.getGender());
+        holder.rating.setRating(rand.nextInt(5));
+        Glide.with(mCtx)
+                .load(item.getImageUrl().toString())
+                .into(holder.imageView);
+
     }
 
     @Override
@@ -50,14 +59,19 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         return mItemList.size();
     }
 
+
+
     class ItemViewHolder extends  RecyclerView.ViewHolder{
         ImageView imageView;
-        TextView textViewName,genere,rating;
-
+        TextView textViewName,gender;
+        RatingBar rating;
         public ItemViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.song_thumb_image);
             textViewName = itemView.findViewById(R.id.song_name);
+            gender = itemView.findViewById(R.id.song_genre);
+            rating = itemView.findViewById(R.id.song_rating);
+
         }
     }
 }

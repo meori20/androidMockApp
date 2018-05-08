@@ -1,4 +1,4 @@
-package Model;
+package com.dev.android.mta.androiduserauthentication.implementaion;
 
 
 import android.content.Intent;
@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.dev.android.mta.androiduserauthentication.R;
-import com.dev.android.mta.androiduserauthentication.implementaion.AuthenticationMethod;
 import com.dev.android.mta.androiduserauthentication.interfaces.IExternalApiLogin;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
