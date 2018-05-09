@@ -11,7 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.dev.android.mta.androiduserauthentication.R;
-import Model.Item;
+import com.dev.android.mta.androiduserauthentication.Model.Item;
 import com.dev.android.mta.androiduserauthentication.implementaion.ItemAdapter;
 import com.facebook.AccessToken;
 import com.facebook.login.LoginManager;
@@ -102,7 +102,7 @@ public class ItemsMenu extends AppCompatActivity {
 
     private void getAllSongsUsingChildListenrs() {
 
-        mAllItemsRef = FirebaseDatabase.getInstance().getReference("Songs");
+        mAllItemsRef = FirebaseDatabase.getInstance().getReference("cars");
 
 
 
@@ -166,7 +166,7 @@ public class ItemsMenu extends AppCompatActivity {
 
         for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
             Item item = dataSnapshot.getValue(Item.class);
-            Log.e(TAG, "updateItemsList() >> adding Item: " + item.getName());
+            Log.e(TAG, "updateItemsList() >> adding Item: " + item.getCarMake());
             String key = dataSnapshot.getKey();
             mItemList.add(item);
         }

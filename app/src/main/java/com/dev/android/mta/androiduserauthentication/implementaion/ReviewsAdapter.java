@@ -3,17 +3,14 @@ package com.dev.android.mta.androiduserauthentication.implementaion;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import com.dev.android.mta.androiduserauthentication.R;
-
 import java.util.List;
 
-import Model.Review;
+import com.dev.android.mta.androiduserauthentication.Model.Review;
 
 /**
  * Created by shahar on 07/05/2018.

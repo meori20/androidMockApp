@@ -1,4 +1,4 @@
-package Model;
+package com.dev.android.mta.androiduserauthentication.Model;
 
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;

@@ -1,4 +1,4 @@
-package Model;
+package com.dev.android.mta.androiduserauthentication.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -14,7 +14,7 @@ public class User implements Parcelable {
 
     private String email;
     private int totalPurchase;
-    private List<String> mySongs = new ArrayList<>();
+    private List<String> myCars = new ArrayList<>();
 
     public User() {
     }
@@ -22,7 +22,7 @@ public class User implements Parcelable {
     public User(String email, int totalPurchase, List<String> mySongs) {
         this.email = email;
         this.totalPurchase = totalPurchase;
-        this.mySongs = mySongs;
+        this.myCars = mySongs;
     }
 
     public String getEmail() {
@@ -36,8 +36,8 @@ public class User implements Parcelable {
         this.totalPurchase += newPurcahsePrice;
     }
 
-    public List<String> getMySongs() {
-        return mySongs;
+    public List<String> getMyCars() {
+        return myCars;
     }
 
 
@@ -50,12 +50,12 @@ public class User implements Parcelable {
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(email);
         //parcel.writeInt(totalPurchase);
-        parcel.writeList(mySongs);
+        parcel.writeList(myCars);
     }
 
     public User(Parcel in) {
         this.email = in.readString();
-        in.readList(mySongs, String.class.getClassLoader());
+        in.readList(myCars, String.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {

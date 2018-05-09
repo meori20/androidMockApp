@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import Model.User;
+import com.dev.android.mta.androiduserauthentication.Model.User;
 
 /**
  * Created by Ori on 4/25/2018.
