@@ -4,13 +4,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.dev.android.mta.androiduserauthentication.Activities.ItemsMenu;
+import com.dev.android.mta.androiduserauthentication.Activities.ItemsMenuActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import com.dev.android.mta.androiduserauthentication.Model.User;
+
+import static com.dev.android.mta.androiduserauthentication.constans.DatabaseConstans.USERS;
 
 /**
  * Created by Ori on 4/25/2018.
@@ -29,8 +31,8 @@ public abstract class AuthenticationMethod {
 
     protected void startNewActivityWithUserDetails(FirebaseUser user){
 
-        Intent intent = new Intent(mMainActivity, ItemsMenu.class);
-        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("Users");
+        Intent intent = new Intent(mMainActivity, ItemsMenuActivity.class);
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child(USERS);
 
         if (user == null) {
             Log.e(TAG, "createNewUser() << Error user is null");
@@ -50,7 +52,7 @@ public abstract class AuthenticationMethod {
         Log.e(TAG, "createNewUser() >>");
 
         FirebaseUser fbUser = mAuth.getCurrentUser();
-        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("Users");
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference(USERS);
 
         if (fbUser == null) {
             Log.e(TAG, "createNewUser() << Error user is null");

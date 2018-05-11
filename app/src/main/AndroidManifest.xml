@@ -46,9 +46,12 @@
         <activity android:name=".Activities.SignUpActvity" />
         <activity android:name=".Activities.AccountInfoActivity" />
         <activity
-            android:name=".Activities.ItemsMenu"
+            android:name=".Activities.ItemsMenuActivity"
             android:label="@string/title_activity_items_menu"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Activities.CarDetailsActivity"
+            android:label="@string/title_activity_car_details" />
 
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
@@ -58,10 +61,7 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <activity
-            android:name=".Activities.CarDetailsActivity"
-            android:label="@string/title_activity_car_details" />
-        <activity android:name=".Activities.carDetails"></activity>
+
     </application>
 
 </manifest>

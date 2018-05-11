@@ -2,10 +2,8 @@ package com.dev.android.mta.androiduserauthentication.implementaion;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +12,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.dev.android.mta.androiduserauthentication.Activities.carDetails;
+import com.dev.android.mta.androiduserauthentication.Activities.CarDetailsActivity;
 import com.dev.android.mta.androiduserauthentication.R;
 
 import java.util.List;
@@ -22,9 +20,7 @@ import java.util.Random;
 
 import com.dev.android.mta.androiduserauthentication.Model.Item;
 
-/**
- * Created by shahar on 05/05/2018.
- */
+import static com.dev.android.mta.androiduserauthentication.constans.ActivityExtrasConstans.CAR_ITEM_OBJECT;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder>  {
     private List<Item> mItemList;
@@ -80,7 +76,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         public ItemViewHolder(View itemView, Context ctx) {
             super(itemView);
             itemView.setOnClickListener(this);
-            carCardView = (CardView) itemView.findViewById(R.id.card_view_car);
+            carCardView = itemView.findViewById(R.id.card_view_car);
             imageView = itemView.findViewById(R.id.car_thumb_image);
             carMake = itemView.findViewById(R.id.car_make);
             carColor = itemView.findViewById(R.id.car_color);
@@ -96,8 +92,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
                     //Log.e(TAG, "CardView.onClick() >> name=" + selectedSong.getName());
 
                     Context context = view.getContext();
-                    Intent intent = new Intent(context, carDetails.class);
-                    intent.putExtra("car", selectedCar);
+                    Intent intent = new Intent(context, CarDetailsActivity.class);
+                    intent.putExtra(CAR_ITEM_OBJECT, selectedCar);
                     context.startActivity(intent);
                 }
             });

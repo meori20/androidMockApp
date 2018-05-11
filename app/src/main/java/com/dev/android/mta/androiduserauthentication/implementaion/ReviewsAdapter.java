@@ -12,9 +12,6 @@ import java.util.List;
 
 import com.dev.android.mta.androiduserauthentication.Model.Review;
 
-/**
- * Created by shahar on 07/05/2018.
- */
 public class ReviewsAdapter extends RecyclerView.Adapter<ReviewsAdapter.ReviewViewHolder> {
 
     private final String TAG = "ReviewsAdapter";

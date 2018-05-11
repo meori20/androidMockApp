@@ -8,5 +8,6 @@ public class AuthenticationMethodConstatns {
 
     public static final String EMAIL_AND__PASSWORD = "emailAndPassword";
     public static final int RC_SIGN_IN = 555;
+    public static final String ANONNYMOUSE_USER = "Anonnymouse User";
 
 }

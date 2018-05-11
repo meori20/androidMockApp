@@ -27,7 +27,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemsMenu extends AppCompatActivity {
+import static com.dev.android.mta.androiduserauthentication.constans.DatabaseConstans.CARS;
+
+public class ItemsMenuActivity extends AppCompatActivity {
     private final String TAG = "MusicPlayerMain";
     private DatabaseReference mAllItemsRef;
     private DatabaseReference mMyUserRef;
@@ -49,10 +51,8 @@ public class ItemsMenu extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mFbUser =  FirebaseAuth.getInstance().getCurrentUser();
-        //allItemsRef = FirebaseDatabase.getInstance().getReference("Songs");
         mToolBar = (Toolbar)findViewById(R.id.main_page_toolbar);
         setSupportActionBar(mToolBar);
-        //getSupportActionBar().setTitle();
         mItemAdapter = new ItemAdapter(this, mItemList);
         mRecyclerView.setAdapter(mItemAdapter);
         getAllSongsUsingChildListenrs();
@@ -63,7 +63,6 @@ public class ItemsMenu extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
          super.onCreateOptionsMenu(menu);
          getMenuInflater().inflate(R.menu.main_menu,menu);
-    //     findViewById(R.id.sign_out_appMenu).setText()
         return true;
     }
 
@@ -76,7 +75,7 @@ public class ItemsMenu extends AppCompatActivity {
          }
          else if(item.getItemId() == R.id.profile)
          {
-             Intent intent = new Intent(ItemsMenu.this, AccountInfoActivity.class);
+             Intent intent = new Intent(ItemsMenuActivity.this, AccountInfoActivity.class);
              startActivity(intent);
          }
          return true;
@@ -88,7 +87,7 @@ public class ItemsMenu extends AppCompatActivity {
             mAccount.signOut();
         }
         disconnectFromFacebook();
-        Intent intent = new Intent(ItemsMenu.this,MainActivity.class);
+        Intent intent = new Intent(ItemsMenuActivity.this,MainActivity.class);
         startActivity(intent);
     }
 
@@ -102,7 +101,7 @@ public class ItemsMenu extends AppCompatActivity {
 
     private void getAllSongsUsingChildListenrs() {
 
-        mAllItemsRef = FirebaseDatabase.getInstance().getReference("cars");
+        mAllItemsRef = FirebaseDatabase.getInstance().getReference(CARS);
 
 
 

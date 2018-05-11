@@ -6,5 +6,6 @@ package com.dev.android.mta.androiduserauthentication.constans;
 
 public class ActivityExtrasConstans {
     public static final String FIREBASE_USER_EMAIL = "FireBaseUserEmail";
+    public static final String CAR_ITEM_OBJECT = "CarItemObject";
 
 }

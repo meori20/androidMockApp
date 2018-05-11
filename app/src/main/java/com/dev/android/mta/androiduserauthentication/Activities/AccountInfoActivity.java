@@ -4,10 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +16,8 @@ import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import static com.dev.android.mta.androiduserauthentication.constans.AuthenticationMethodConstatns.ANONNYMOUSE_USER;
 
 public class AccountInfoActivity extends AppCompatActivity {
     private TextView mUsername;
@@ -41,7 +41,7 @@ public class AccountInfoActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if(user!=null) {
             if(user.isAnonymous()) {
-                mUsername.setText("Anonnymouse User");
+                mUsername.setText(ANONNYMOUSE_USER);
             }
             else {
                 mEmail.setText("Email: " + user.getEmail());
@@ -72,7 +72,7 @@ public class AccountInfoActivity extends AppCompatActivity {
         }
         else if(item.getItemId() == R.id.item_menu_profile)
         {
-            Intent intent = new Intent(AccountInfoActivity.this, ItemsMenu.class);
+            Intent intent = new Intent(AccountInfoActivity.this, ItemsMenuActivity.class);
             startActivity(intent);
         }
         return true;

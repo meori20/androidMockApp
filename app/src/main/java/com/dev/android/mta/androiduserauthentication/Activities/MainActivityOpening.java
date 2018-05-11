@@ -82,7 +82,7 @@ public class MainActivityOpening extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent intent = new Intent(MainActivityOpening.this, ItemsMenu.class);
+        Intent intent = new Intent(MainActivityOpening.this, ItemsMenuActivity.class);
         startActivity(intent);
         finish();
     }
