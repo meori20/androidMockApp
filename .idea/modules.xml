@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\Users\shahar\Desktop\Android\androidMockApp-master\androidAuthentication-master.iml" filepath="C:\Users\shahar\Desktop\Android\androidMockApp-master\androidAuthentication-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/androidMockApp.iml" filepath="$PROJECT_DIR$/androidMockApp.iml" />
-      <module fileurl="file://D:\Dev\Android\androidMockApp\androidMockApp-master.iml" filepath="D:\Dev\Android\androidMockApp\androidMockApp-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\Dev\Android\androidMockApp\app\app.iml" filepath="D:\Dev\Android\androidMockApp\app\app.iml" />
     </modules>
   </component>
 </project>

@@ -2,8 +2,10 @@ package com.dev.android.mta.androiduserauthentication.Model;
 
 
 import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Item {
+public class Item implements Parcelable {
     private String carColor;
     private String carImage;
     private String carMake;
@@ -69,4 +71,37 @@ public class Item {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(carColor);
+        parcel.writeString(carImage);
+        parcel.writeString(carMake);
+        parcel.writeString(carModel);
+        parcel.writeString(price);
+        parcel.writeInt(carModelYear);
+    }
+    public static final Parcelable.Creator<Item> CREATOR = new Parcelable.Creator<Item>() {
+        @Override
+        public Item createFromParcel(Parcel source) {
+            return new Item(source);
+        }
+        @Override
+        public Item[] newArray(int size) {
+            return new Item[size];
+        }
+    };
+        private Item(Parcel in){
+            this.carColor = in.readString();;
+            this.carImage = in.readString();;
+            this.carMake = in.readString();;
+            this.carModel = in.readString();;
+            this.carModelYear = in.readInt();
+            this.price = in.readString();
+        }
 }
